@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nor14fzkv-go-gitops
+  description: This is GitOps manifest for nor14fzkv-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=nor14fzkv-go
+    backstage.io/kubernetes-id: nor14fzkv-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: nor14fzkv-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:nor14fzkv-go
